@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(href="/css/bootstrap.min.css", rel="stylesheet")
+    link(href="/css/blog.css", rel="stylesheet")
+
+  body
+    
+    .blog-masthead
+      .container
+        nav.blog-nav
+          a(class="blog-nav-item active", href="/") Home
+
+
+    .container
+      .blog-header
+        h1.blog-title My blog
+        p(class="lead blog-description") Implementing Pagination in Bookshelf.js and Express applications
+
+      .row
+
+        block content
+
+
+        include includes/sidebar
+
+
+    footer.blog-footer
+      p 
+        a(href="http://blog.ragingflame.co.za") Raging Flame Blog
+

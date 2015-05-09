@@ -1,0 +1,35 @@
+
+mixin paginate(pagination)
+  if pagination.limit < pagination.total
+    .row(style='text-align: center')
+      ul.pagination
+        if (pagination.isFirstPage)
+          li.disabled
+            a(href='#') &laquo; Prev
+    
+        else 
+          li 
+            a(href='?p=#{pagination.prev}') &laquo; Prev
+    
+        each page, i in pagination.items
+          if (page == '...') 
+            li.disabled
+              a(href="#") ...
+     
+          else 
+            if (page == pagination.currentpage) 
+              li.active
+                a(href='#{pagination.base}?p=#{page}') #{page}
+            else
+              li
+                a(href='#{pagination.base}?p=#{page}') #{page}
+    
+    
+        if (pagination.isLastPage) 
+          li.disabled
+            a(href='#') Next &raquo;
+    
+        else 
+          li
+            a(href='#{pagination.base}?p=#{pagination.next}') Next &raquo;
+    

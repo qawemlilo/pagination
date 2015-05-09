@@ -1,0 +1,15 @@
+extends layout
+
+
+include mixins/pagination
+
+
+block content
+  div(class="col-sm-8 blog-main")
+    each post, i in posts
+      dl.dl-horizontal
+        dt #{post.created_at}
+        dd 
+          a(href="/posts/#{post.slug}") #{post.title}
+
+    mixin paginate(pagination)

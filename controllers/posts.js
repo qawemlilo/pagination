@@ -12,7 +12,7 @@ module.exports = {
   getPosts: function (req, res, next) {
     var posts = new Posts();
     var page = parseInt(req.query.p, 10);
-    var limit = parseInt(req.query.limit, 10) || 2;
+    var limit = parseInt(req.query.limit, 10) || 5;
     var order = req.query.order || "asc";
     var currentpage = page || 1;
 
