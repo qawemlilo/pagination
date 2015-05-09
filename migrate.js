@@ -4,7 +4,7 @@ var Bookshelf = require('./dbconnect')({
     host: 'localhost',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASS || 'juliet',
-    database: process.env.DB_NAME || 'test',
+    database: process.env.DB_NAME || 'myblog',
     charset: 'utf8'
   }
 });
@@ -69,7 +69,7 @@ function createTables () {
   var tables = [];
   var tableNames = _.keys(Schema);
 
-  console.log('Creating tables...');
+  console.log('> Creating tables...');
 
   tables = _.map(tableNames, function (tableName) {
     return function () {
@@ -83,7 +83,7 @@ function createTables () {
 
 createTables()
 .then(function() {
-  console.log('Tables created!!');
+  console.log('> Tables created!');
   process.exit(0);
 })
 .otherwise(function (error) {
