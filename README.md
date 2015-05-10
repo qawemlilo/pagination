@@ -1,6 +1,6 @@
 # Implementing Pagination in Bookshelf.js and Express applications 
 
-This repo contains the code used in  my blog post, [Implementing Pagination in Bookshelf.js and Express applications](http://blog.ragingflame.co.za/2014/7/21/using-nodejs-with-mysql).
+This repo contains the code used in  my blog post, [Implementing Pagination in Bookshelf.js and Express applications](http://blog.ragingflame.co.za/2015/5/10/implementing-pagination-in-bookshelfjs-and-express-applications).
 
 ## License
 
