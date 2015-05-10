@@ -1,13 +1,6 @@
 
-var Bookshelf = require('./dbconnect')({
-  connection: {
-    host: 'localhost',
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASS || 'juliet',
-    database: process.env.DB_NAME || 'myblog',
-    charset: 'utf8'
-  }
-});
+var config = require('./config');
+var Bookshelf = require('./dbconnect')(config);
 var knex = Bookshelf.knex;
 var Schema = require('./schema');
 var sequence = require('when/sequence');

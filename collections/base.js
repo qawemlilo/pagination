@@ -34,7 +34,7 @@ Bookshelf.Collection = Bookshelf.Collection.extend({
    *
    * @returns: {Promiscollectione} - resolves with pagination
   */ 
-  createPagination: function (totalRecords) {
+  generatePagination: function (totalRecords) {
     var self = this;
     var totalpages = Math.ceil(totalRecords / self.limit);
     var groups = Math.ceil(totalpages / self.paginationLimit);
@@ -133,7 +133,7 @@ Bookshelf.Collection = Bookshelf.Collection.extend({
     .then(function (results) {
       totalpages = parseInt(results[0].total, 10);
 
-      self.createPagination(totalpages);
+      self.generatePagination(totalpages);
 
       return totalpages;
     });
